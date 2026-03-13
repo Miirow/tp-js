@@ -118,7 +118,9 @@ export function displayMenu(meals: Meal[], user: User): void {
   function updateTotal(): void {
     const total = selectedMeals.reduce((sum, m) => sum + m.price, 0);
     const totalEl = document.getElementById("menuTotalHT") as HTMLElement;
+    const totalTTCEl = document.getElementById("menuTotalTTC") as HTMLElement;
     totalEl.textContent = total.toFixed(2);
+    totalTTCEl.textContent = (total * 2).toFixed(2);
   }
 
   const btn = document.getElementById("calculateMenuBtn") as HTMLButtonElement;
